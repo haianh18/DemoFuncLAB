@@ -16,15 +16,18 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:elevation="4dp">
 
-        <!--        <androidx.appcompat.widget.Toolbar-->
-        <!--            android:id="@+id/toolbar"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="?attr/actionBarSize"-->
-        <!--            android:background="@color/main_900"-->
-        <!--            app:title="Giỏ đặt phòng"-->
-        <!--            app:titleTextColor="@android:color/white"-->
-        <!--            app:navigationIcon="@drawable/ic_arrow_back_24"-->
-        <!--            app:menu="@menu/cart_menu" />-->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            app:title="My Cart"
+            android:background="@color/main_900"
+            app:titleTextColor="@color/main_50"
+            app:navigationIconTint="@color/main_50"
+            app:titleTextAppearance="@style/OrderConfirmationToolbarTitle"
+            app:navigationIcon="@drawable/arrow_left"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -103,22 +106,22 @@
     android:background="@android:color/transparent">
 
     <!-- Summary Card -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/summaryCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="2dp">
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/summaryCard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        app:cardBackgroundColor="@android:color/white"-->
+<!--        app:cardCornerRadius="12dp"-->
+<!--        app:cardElevation="2dp">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/main_300"
-            android:orientation="vertical"
-            android:padding="16dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/main_300"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="16dp">-->
 
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
@@ -189,38 +192,38 @@
 <!--                android:background="#E0E0E0" -->
 <!--                />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Total:"
-                    android:textColor="@color/main_800"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Total:"-->
+<!--                    android:textColor="@color/main_800"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/textTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.600.000đ"
-                    android:textColor="@color/main_800"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textTotal"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="1.600.000đ"-->
+<!--                    android:textColor="@color/main_800"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="bold" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-    </com.google.android.material.card.MaterialCardView>
+<!--    </com.google.android.material.card.MaterialCardView>-->
 
     <!-- Checkout Button -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonCheckout"
+        android:id="@+id/btnProceedOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -239,18 +242,18 @@
 
 
     <!-- Back Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonBackToMain"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_gravity="top|start"
-        android:layout_margin="16dp"
-        android:textSize="16dp"
-        android:text="Back"
-        android:backgroundTint="@color/main_900"
-        android:contentDescription="Back to Main"
-        app:cornerRadius="24dp"
-        app:elevation="6dp"
-        app:iconGravity="textStart" />
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/buttonBackToMain"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_gravity="top|start"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:textSize="16dp"-->
+<!--        android:text="Back"-->
+<!--        android:backgroundTint="@color/main_900"-->
+<!--        android:contentDescription="Back to Main"-->
+<!--        app:cornerRadius="24dp"-->
+<!--        app:elevation="6dp"-->
+<!--        app:iconGravity="textStart" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

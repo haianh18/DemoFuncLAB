@@ -3,6 +3,7 @@ package com.example.demofunclab;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,6 +31,8 @@ public class CartActivity extends AppCompatActivity {
     private MaterialCardView summaryCard;
     private TextView textTotal;
 
+    private Button btnProceedOrder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +46,10 @@ public class CartActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewCartItems);
         emptyLayout = findViewById(R.id.emptyStateLayout);
-        summaryCard = findViewById(R.id.summaryCard);
-        textTotal = findViewById(R.id.textTotal);
+//        summaryCard = findViewById(R.id.summaryCard);
+//        textTotal = findViewById(R.id.textTotal);
+        btnProceedOrder = findViewById(R.id.btnProceedOrder);
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         sampleProducts = new ArrayList<>();
@@ -111,29 +116,32 @@ public class CartActivity extends AppCompatActivity {
         updateCartState();
 
         // Back button logic
-        findViewById(R.id.buttonBackToMain).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CartActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        findViewById(R.id.buttonBackToMain).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(CartActivity.this, MainActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
     }
 
     private void updateCartState() {
         if (sampleProducts.isEmpty()) {
             emptyLayout.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
-            summaryCard.setVisibility(View.GONE);
+//            summaryCard.setVisibility(View.GONE);
+            btnProceedOrder.setVisibility(View.GONE);
         } else {
             emptyLayout.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
-            summaryCard.setVisibility(View.VISIBLE);
+//            summaryCard.setVisibility(View.VISIBLE);
+            btnProceedOrder.setVisibility(View.VISIBLE);
             int total = 0;
             for (Product p : sampleProducts) total += p.getPrice();
-            textTotal.setText(String.valueOf(total));
+//            textTotal.setText(String.valueOf(total));
+            btnProceedOrder.setText("\uD83C\uDFC1 PROCEED ORDER" + " (" + NumberFormat.getNumberInstance(Locale.US).format(total) + "đ)");
         }
     }
 

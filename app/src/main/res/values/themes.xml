@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.DemoFuncLAB" parent="Base.Theme.DemoFuncLAB" />
+    <style name="OrderConfirmationToolbarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
